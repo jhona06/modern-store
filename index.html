@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stuffious — Modern Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="left-group">
+        <button class="menu-btn" aria-label="menu">☰</button>
+        <a class="brand" href="#home"><img src="https://via.placeholder.com/32x32?text=S" alt="logo"> <span>Stuffious</span></a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-mini" title="Search">
+          <input id="miniSearch" placeholder="Search products..." />
+          <button id="miniSearchBtn">🔍</button>
+        </div>
+
+        <button id="favBtn" class="icon-btn" title="Wishlist">♡</button>
+        <button id="cartBtn" class="icon-btn" title="Cart">🛒 <span id="cartCount" class="cart-badge">0</span></button>
+        <button class="avatar-btn" title="Account">👤</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-large">Shop</h1>
+      <div class="hero-card">
+        <h2>Give All You Need</h2>
+        <p>Curated selections, premium quality, best prices — shipped fast.</p>
+        <div class="hero-controls">
+          <input id="heroSearch" placeholder="Search by product name" />
+          <a href="#products" class="btn primary">Explore Stuff</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <main class="container">
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="panel categories">
+          <h4>Category</h4>
+          <ul id="categoryList">
+            <!-- injected -->
+          </ul>
+        </div>
+
+        <div class="panel filters">
+          <h4>Filters</h4>
+          <label><input type="checkbox" value="on-sale" id="filterSale"> On Sale</label>
+          <label><input type="checkbox" value="new" id="filterNew"> New Arrival</label>
+        </div>
+
+        <div class="panel shop-info">
+          <h4>Delivery</h4>
+          <p>Fast shipping & free returns in 7 days.</p>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS AREA -->
+      <section id="products" class="products-area">
+        <div class="toolbar">
+          <div class="results" id="resultsInfo">Showing products</div>
+          <div class="sort">
+            <label>Sort</label>
+            <select id="sortSelect">
+              <option value="default">Featured</option>
+              <option value="price-asc">Price — low to high</option>
+              <option value="price-desc">Price — high to low</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+          <!-- injected -->
+        </div>
+
+        <div class="pagination">
+          <button id="prevPage">Prev</button>
+          <div id="pageInfo">1 / 1</div>
+          <button id="nextPage">Next</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations" class="recommendations">
+      <h3>Explore our recommendations</h3>
+      <div id="recRow" class="rec-row">
+        <!-- injected -->
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta-left">
+        <h3>Ready to Get Our New Stuff?</h3>
+        <p>Sign up and get early access to new items and exclusive discounts.</p>
+      </div>
+      <div class="cta-right">
+        <input id="emailInput" type="email" placeholder="Your email address">
+        <button id="subscribeBtn" class="btn primary">Subscribe</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Stuffious • All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Support</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h4>Your Cart</h4>
+      <button id="closeCart" class="icon-btn">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items">No items yet.</div>
+    <div class="cart-foot">
+      <div class="total">Total: $<span id="cartTotal">0.00</span></div>
+      <div class="cart-actions">
+        <button id="checkoutBtn" class="btn primary">Checkout</button>
+        <button id="clearCart" class="btn">Clear</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" class="icon-btn modal-close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
